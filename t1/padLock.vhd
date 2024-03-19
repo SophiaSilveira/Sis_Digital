@@ -19,4 +19,4 @@ architecture half_adder of half_adder is
 begin
   sum <= a xor b;	
   carry <= a and b;
-end architecture;
+end architecture; -- TESTE
