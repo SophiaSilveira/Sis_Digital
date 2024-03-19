@@ -35,7 +35,7 @@ architecture tb of tb is
 
 begin
 
-  DUT: entity work.padLock
+  DUT: entity work.pad_lock
     port map(a => a, b => b, sum => sum, carry => carry);
 
   process
