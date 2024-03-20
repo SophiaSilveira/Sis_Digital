@@ -14,8 +14,11 @@ end entity;
 -- Arquitetura
 --------------------------------------
 architecture tb of tb is
-  signal a, b : std_logic; -- inputs
-  signal sum, carry: std_logic; -- outputs
+  signal clock, reset, configurar, valido : std_logic; --inputs
+  signal entrada: std_logic_vector(3 downto 0);
+  signal tranca, configurado, alarme: out std_logic; --outputs
+
+  --criar uma variavel const
 
   -- declare record type
   type test_vector is record
@@ -36,13 +39,16 @@ architecture tb of tb is
 begin
 
   DUT: entity work.pad_lock
-    port map(a => a, b => b, sum => sum, carry => carry);
+    port map(clock => clock, reset => reset, configurar => configurar, valido => valido, 
+    entrada => entrada, tranca => tranca, configurado => configurado, alarme => alarme);
+
+  clock <= not clock after 6.25 ns;
 
   process
   begin
     for i in test_vectors'range loop
-      a <= test_vectors(i).a;  -- signal a = i^th-row-value of test_vector's a
-      b <= test_vectors(i).b;
+      configurar = test_vectors();
+
 
       wait for 20 ns;
 
