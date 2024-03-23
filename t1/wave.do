@@ -1,11 +1,15 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate -divider entradas
-add wave -noupdate /tb/DUT/a
-add wave -noupdate /tb/DUT/b
+add wave -noupdate /tb/DUT/reset
+add wave -noupdate /tb/DUT/clock
+add wave -noupdate /tb/DUT/configurar
+add wave -noupdate /tb/DUT/entrada
+add wave -noupdate /tb/DUT/valido
 add wave -noupdate -divider saidas
-add wave -noupdate /tb/DUT/sum
-add wave -noupdate /tb/DUT/carry
+add wave -noupdate /tb/DUT/configurado
+add wave -noupdate /tb/DUT/tranca
+add wave -noupdate /tb/DUT/alarme
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {0 ns} 0}
 quietly wave cursor active 0
