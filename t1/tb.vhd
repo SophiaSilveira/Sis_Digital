@@ -52,9 +52,9 @@ architecture tb of tb is
   );
 
   type test_config is record
-  configurar, valido : std_logic;
-  entrada : std_logic_vector(3 downto 0);
-  configurado, tranca, alarme : std_logic;
+    configurar, valido : std_logic;
+    entrada : std_logic_vector(3 downto 0);
+    configurado, tranca, alarme : std_logic;
   end record; 
 
   type test_config_array is array (natural range <>) of test_config;
@@ -73,9 +73,9 @@ architecture tb of tb is
   );
 
   type test_wrong_password is record
-  configurar, valido : std_logic;
-  entrada : std_logic_vector(3 downto 0);
-  configurado, tranca, alarme : std_logic;
+    configurar, valido : std_logic;
+    entrada : std_logic_vector(3 downto 0);
+    configurado, tranca, alarme : std_logic;
   end record; 
 
   type test_wrong_password_array is array (natural range <>) of test_wrong_password;
